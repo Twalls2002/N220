@@ -14,11 +14,11 @@ function startAdventure() {
 
     //Check the user's decision regarding the dog
     if (secondChoice) {
-      // User chooses to take the dog
+      //User chooses to take the dog
       document.getElementById("story").innerHTML +=
         "<br />You take the dog home and it becomes your best friend!";
     } else {
-      // User chooses not to take the dog
+      //User chooses not to take the dog
       document.getElementById("story").innerHTML +=
         "<br />You decide to leave the dog and continue your journey.";
     }
