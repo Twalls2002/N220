@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Task Manager</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin-bottom: 16px;
+      }
+
+      body > h1 {
+        background-color: #f08080;
+        padding: 16px;
+      }
+
+      body {
+        background-color: #90ee9075;
+      }
+
+      body > section {
+        padding: 0 12px;
+      }
+
+      .task {
+        border: 2px solid black;
+        border-radius: 5px;
+        width: 300px;
+        padding: 8px;
+        margin: 4px 0;
+      }
+
+      button {
+        padding: 4px;
+        background-color: #4f414f;
+        color: white;
+      }
+
+      button.red {
+        background-color: #811d1d;
+      }
+
+      button.blue {
+        background-color: #8f91d6;
+      }
+
+      .done h4 {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Login Form -->
+      <div id="login-form" class="form">
+        <h2>Login</h2>
+        <form id="login" onsubmit="handleLogin(event)">
+          <label for="username">Username</label>
+          <input type="text" id="username" required />
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+          <button type="submit">Login</button>
+        </form>
+        <div id="login-error"></div>
+      </div>
+
+      <!-- Dashboard (tasks section) -->
+      <div id="dashboard" class="dashboard" style="display: none">
+        <h2>Welcome, <span id="user-name"></span></h2>
+        <button id="logout-btn" onclick="logout()">Logout</button>
+
+        <div id="task-manager">
+          <h3>Your Tasks</h3>
+          <form id="new-task-form" onsubmit="addTask(event)">
+            <input
+              type="text"
+              id="task-text"
+              placeholder="New task..."
+              required
+            />
+            <button type="submit">Add Task</button>
+          </form>
+          <ul id="task-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
